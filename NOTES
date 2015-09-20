@@ -1,0 +1,28 @@
+
+
+
+pip install -r ./requirements.txt
+
+virtual env
+
+# RASPBERRY PY
+~/src/libsensors-python $ python streaming_example.py
+
+# SERVER responsible to launch the web server and websocket
+
+source ~/.virtualenv/breath-hackathon/bin/activate
+python ./autobahn-websocket-broadcast/server.py
+
+
+# CLIENT will receive the data from sensor and forward it to the websocket!
+source ~/.virtualenv/breath-hackathon/bin/activate
+python ./autobahn-websocket-broadcast/client.py
+
+
+python ./autobahn-websocket-broadcast/client_libsensors.py
+
+
+
+
+
+

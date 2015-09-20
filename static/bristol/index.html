@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>cool</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="html5 version of the classic human tetris game"/>
+		<link rel="icon" type="image/png" href="favicon.png">
+		<link href="style.css" type="text/css" rel="stylesheet" />
+
+	</head>
+	<body>
+
+		<video autoplay></video>
+		<header>
+			<span>human tetris</span>
+			<div id="score-box">
+				score
+				<div id="score-number">0</div>
+			</div>
+			<canvas id="distance-canvas" width="900" height="60"></canvas>
+		</header>
+
+		<div id="message-overlay">Allow webcam access to play.</div>
+		<canvas id="game-canvas" width="1000" height="600"></canvas>
+
+		<p id="credits">gus glover, ambuj agrawal, thongchai wirojsakseree - 2015</p>
+
+	</body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="scripts/game_view.js"></script>
+	<script src="scripts/game_model.js"></script>
+	<script src="scripts/distance_view.js"></script>
+	<script src="scripts/init.js"></script>
+</html>

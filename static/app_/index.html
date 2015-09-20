@@ -1,0 +1,299 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        #myform {
+            text-align: center;
+            padding: 5px;
+            border: 1px dotted #ccc;
+            margin: 2%;
+        }
+
+        .qty {
+            width: 40px;
+            height: 25px;
+            text-align: center;
+        }
+
+        input.qtyplus {
+            width: 25px;
+            height: 25px;
+        }
+
+        input.qtyminus {
+            width: 25px;
+            height: 25px;
+        }
+    </style>
+    <title>1E-shop - OnePage one product shop</title>
+    <meta charset="utf-8">
+    <meta name="description" content="1E-shop - Bootstrap Theme from angelostudio.net">
+    <meta name="author" content="ANGELOSTUDIO.NET">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/app/css/style.min.css">
+    <link rel="stylesheet" href="static/app/css/yellow.css" class="colors">
+    <link rel="stylesheet" href="static/app/css/new/core.css" class="colors">
+    <link rel="shortcut icon" href="img/ico/32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="static/app/img/ico/60.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/app/img/ico/72.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="static/app/img/ico/120.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="static/app/img/ico/152.png" type="image/png" />
+    <script type="text/javascript" src="static/app/js/modernizr.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<script>
+jQuery(document).ready(function () {
+    // This button will increment the value
+    $('.qtyplus').click(function (e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+        // If is not undefined
+        if (!isNaN(currentVal)) {
+            // Increment
+            $('input[name=' + fieldName + ']').val(currentVal + 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name=' + fieldName + ']').val(0);
+        }
+    });
+    // This button will decrement the value till 0
+    $(".qtyminus").click(function (e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+        // If it isn't undefined or its greater than 0
+        if (!isNaN(currentVal) && currentVal > 0) {
+            // Decrement one
+            $('input[name=' + fieldName + ']').val(currentVal - 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name=' + fieldName + ']').val(0);
+        }
+    });
+});
+</script>
+<body id="home">
+
+
+    <a id="menu-link" href="#" class="">
+        <span class="menu-icon"></span>
+    </a>
+    <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+            <ul>
+                <li><a href="#home" class="smooth-scroll">Home</a></li>
+                <li><a href="#start" class="smooth-scroll">About product</a></li>
+                <li><a href="#showcase" class="smooth-scroll">Showcase</a></li>
+                <li><a href="#requirements" class="smooth-scroll">Requirements</a></li>
+                <li><a href="#features" class="smooth-scroll">Features</a></li>
+                <li><a href="#contact" class="smooth-scroll">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="wrap">
+        <section id="hero" class="m-center text-center bg-shop full-height">
+            <div class="center-box">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="hero-unit ">
+                                <h1 class="title"><b>Soapbox</b></h1>
+                                <h3><!--<b>OnePage / OneProduct / OneTemplate</b>--></h3>
+
+
+
+
+
+
+                                <div class="mainmenu-area">
+                                    <div class="container">
+                                        <div class="row bs-wizard" style="border-bottom:0;">
+
+
+                                            <div class="col-xs-4 bs-wizard-step active">
+                                                <!-- complete -->
+                                                <div class="text-center bs-wizard-stepnum"><a href="home.html">Choose</a></div>
+                                                <div class="progress"><div class="progress-bar"></div></div>
+                                                <a href="#" class="bs-wizard-dot"></a>
+                                                <div class="bs-wizard-info text-center"><i class="fa fa-dropbox fa-4x"></i></div>
+                                            </div>
+
+
+                                            <div class="col-xs-4 bs-wizard-step disabled">
+                                                <!-- active -->
+                                                <div class="text-center bs-wizard-stepnum"><a href="cart.html"> Check</a></div>
+                                                <div class="progress"><div class="progress-bar"></div></div>
+                                                <a href="#" class="bs-wizard-dot"></a>
+                                                <div class="bs-wizard-info text-center"><i class="fa fa-thumbs-o-up fa-4x"></i></div>
+                                            </div>
+
+                                            <div class="col-xs-4 bs-wizard-step disabled">
+                                                <!-- active -->
+                                                <div class="text-center bs-wizard-stepnum">Deliver!</div>
+                                                <div class="progress"><div class="progress-bar"></div></div>
+                                                <a href="#" class="bs-wizard-dot"></a>
+                                                <div class="bs-wizard-info text-center"><i class="fa fa-home fa-4x"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <br>
+                                <a class="btn white" href="http://dawudrahmanaqovia.github.io/unicleverstatic/index2.html"><!--<b>$5</b>--> Create my box</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="static/app/img/logo.png" alt="#" class="img-responsive center-block" height="408" width="556">
+                            </div>  
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <div class="modal fade text-modal" id="text-modal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+            <div class="modal-dialog modal-sm2">
+                <div class="modal-content">
+                    <div class="modal-header bg-shop">
+                        <a class="close-modal" href="#" data-dismiss="modal">
+                            <span class="menu-icon"></span>
+                        </a>
+                        <h2 class=""><b>License</b></h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>In order to simplify the legal terms, here are the rules of the game written in plain English, that you are obliged to follow when using the digital goods at 1E-shop.</p>
+                        <p>
+                            <br><strong>You are free to…</strong>
+                        </p>
+                        <ul>
+                            <li>Use the digital goods in a website for yourself or a client for personal, open-source or commercial use.</li>
+                            <li>Use the digital goods to create an icon for your app or button icons.</li>
+                            <li>Use the digital goods to create a logo or other brand material.</li>
+                        </ul>
+                        <p>
+                            <br><strong>You are forbidden to…</strong>
+                        </p>
+                        <ul>
+                            <li>Re-sell the digital goods, host the digital goods or rent the digital goods (either in existing or modiﬁed form).</li>
+                            <li>Include the digital goods with a website offered for sale or distributed for free.</li>
+                            <li>Convert the digital goods to a theme to sell or distribute for free.</li>
+                        </ul>
+                        <br>
+                        <p>While attribution is optional, it is always appreciated. Intellectual property rights are not transferred with the download of the icons.</p>
+                        <p>Should you happen to lost the purchased good, let me know the email you've used upon your purchase, and I will provide you with the new files.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="product-modal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+            <div class="modal-dialog modal-sm2">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="close-modal" href="#" data-dismiss="modal">
+                            <span class="menu-icon"></span>
+                        </a>
+                        <img src="static/app/img/cup1.jpg" alt="" class="img-responsive">
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="text-center"><b>PaperCup - Mockup </b>($5,00)</h3>
+
+
+                    </div>
+
+                    <div>
+                        <form id='myform' method='POST' action='#'>
+                            <input type='button' value='-' class='qtyminus' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='qty' />
+                            <input type='button' value='+' class='qtyplus' field='quantity' />
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <form id="buy" action="buy" class="myform" method="post" novalidate>
+                            <div class="form-group">
+                                <label class="control-label" for="contact-mail">Email</label>
+                                <div class=" controls">
+                                    <input name="email" placeholder="PayPal Email" class="form-control input-lg requiredField" type="email" data-error-invalid="Invalid email address" data-error-empty="Enter email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">password</label>
+                                <div class="controls">
+                                    <input id="password" class="form-control" type="password" placeholder="PayPal Password" name="password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-block">PAY NOW</button>
+                            </div>
+                            <p class="text-center">
+                                <a href="" data-dismiss="modal">Cancel</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <section id="style-switcher">
+             <h2>Colors <a href="#"><i class="fa fa-tint"></i></a></h2>
+             <ul>
+                 <li id="yellow"></li>
+                 <li id="purple"></li>
+                 <li id="turquoise"></li>
+             </ul>
+         </section>-->
+    </div>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script type="text/javascript" src="static/app/js/placeholders.min.js"></script>
+    <script type="text/javascript" src="static/app/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="static/app/js/jquery.waitforimages.min.js"></script>
+    <script type="text/javascript" src="static/app/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="static/app/js/main.min.js"></script>
+    <script type="text/javascript" src="static/app/js/ga.js"></script>
+</body>
+
+</html>
